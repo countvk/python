@@ -1,4 +1,3 @@
-
 for p in range(3):
     print("*\t*\t*\n");
 print("||");
@@ -20,7 +19,7 @@ def printmat(*m):
     print("\n");
 
 def play():
-    m=['*','*','*','*','*','*','*','*','*'];
+
 
 
     while 1:
@@ -30,14 +29,20 @@ def play():
 #turn rotation while loop
         ans=int(input());
         if ans!=0:
+            m=['*','*','*','*','*','*','*','*','*'];
+            count=0;
             while 1:
+
+
 #player one's turn
+
                 while 1:
                     print("PLAYER ONE");
                     printmat(*m);
                     x=int(input())-1;
                     if m[x]!='x' and m[x]!='o':
                         m[x]='x';
+                        count+=1;
                         break;
                     else:
                         print("YOU CANNOT PLACE HERE");
@@ -103,7 +108,10 @@ def play():
                     if m[8]=='o':
                         print("PLAYER TWO WINS!!!!!!!");
                         break;
-
+#draw match scenario
+                if count==9:
+                    print("MATCH IS A DRAW!!!!");
+                    break;
 #player two's turn
                 while 1:
                     print("PLAYER TWO");
@@ -111,6 +119,7 @@ def play():
                     y=int(input())-1;
                     if m[y]!='x' and m[y]!='o':
                         m[y]='o';
+                        count+=1;
                         break;
                     else:
                         print("YOU CANNOT PLACE HERE");
@@ -182,7 +191,3 @@ def play():
             break;
 #play
 play();
-
-
-
-
