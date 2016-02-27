@@ -4,7 +4,7 @@ print("||");
 print("1\t2\t3\n4\t5\t6\n7\t8\t9\n")   ;
 print("enter the respective number to place your symbol player one will be x and player two will be o\n");
 
-
+import random
 #matrix printer
 
 def printmat(*m):
@@ -133,7 +133,7 @@ def play():
                 while 1:
                     print("PLAYER TWO");
                     printmat(*m);
-                    y=int(input())-1;
+                    y=random.rndint(1,9)-1;
                     if m[y]!='x' and m[y]!='o':
                         m[y]='o';
                         count+=1;
