@@ -1,9 +1,9 @@
 
 for p in range(3):
-    print("0\t0\t0\n");
+    print("*\t*\t*\n");
 print("||");
 print("1\t2\t3\n4\t5\t6\n7\t8\t9\n")   ;
-print("enter the respective number to place your symbol player one will be x and player two will be y\n");
+print("enter the respective number to place your symbol player one will be x and player two will be o\n");
 
 
 #matrix printer
