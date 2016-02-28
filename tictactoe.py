@@ -4,21 +4,7 @@ import random
 import tkinter.simpledialog
 import tkinter.messagebox
 def printmat(*m):
-    for i in range(0,3):
 
-        print(  m[i]  ,end='');
-        print(  "\t" ,end='');
-    print("\n");
-    for i in range(3,6):
-
-        print(  m[i]  ,end='');
-        print(  "\t" ,end='');
-    print("\n");
-    for i in range(6,9):
-
-        print(  m[i]  ,end='');
-        print(  "\t" ,end='');
-    print("\n");
 #labeler
     for i in range(0,3):
 
@@ -33,7 +19,8 @@ def printmat(*m):
        t.insert(END, m[i] + '\t')
     t.insert(END,  '\n')
     t.insert(END,'_______________________\n')
-
+def clr():
+    t.delete('1.0', END)
 
 
 
@@ -41,7 +28,7 @@ def printmat(*m):
 def play():
 
     while 1:
-        print("new game starts")
+        tkinter.messagebox.showinfo("","the game begins")
         m=['*','*','*','*','*','*','*','*','*'];
         count=0;
 
@@ -51,14 +38,17 @@ def play():
 #player one's turn
 
             while 1:
-                print("PLAYER ONE");
+
 
                 printmat(*m)
+
                 x=int(tkinter.simpledialog.askinteger('playerone','number'))-1;
                 if m[x]!='x' and m[x]!='o':
                         m[x]='x';
                         count+=1;
+                        clr()
                         break;
+
                 else:
                     tkinter.messagebox.showerror('!!!!!!!!','UCANTDOTHAT!')
 
@@ -67,6 +57,7 @@ def play():
             if m[4]==m[0]and m[4]==m[8]:
                 if m[4]=='x':
                     printmat(*m);
+
                     tkinter.messagebox.showinfo('!!!!!!!!','UWON')
                     break;
                 if m[4]=='o':
@@ -148,118 +139,143 @@ def play():
 #player two's turn
             while 1:
 
-                tkinter.messagebox.showinfo('computer','thinking please wait......')
+
 #diagone
                 if m[4]==m[0]and m[8]=='*' and m[4]!='*' :
                     m[8]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[4]==m[8]and m[0]=='*'and m[4]!='*':
                     m[0]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[8]==m[0]and m[4]=='*' and m[0]!='*':
                     m[4]='o';
                     count+=1;
+                    clr()
                     break;
                 #diag two
                 if m[4]==m[2]and m[6]=='*'and m[4]!='*' :
                     m[6]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[4]==m[6]and m[2]=='*' and m[4]!='*':
                     m[2]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[6]==m[2]and m[4]=='*' and m[2]!='*':
                     m[4]='o';
                     count+=1;
+                    clr()
                     break;
                 #column one
                 if m[0]==m[3]and m[6]=='*'and m[0]!='*':
                     m[6]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[0]==m[6]and m[3]=='*'and m[0]!='*':
                     m[3]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[6]==m[3]and m[0]=='*'and m[3]!='*':
                     m[0]='o';
                     count+=1;
+                    clr()
                     break;
                 #column two
                 if m[4]==m[1]and m[7]=='*'and m[4]!='*':
                     m[7]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[4]==m[7]and m[1]=='*'and m[4]!='*':
                     m[1]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[7]==m[1]and m[4]=='*'and m[1]!='*':
                     m[4]='o';
                     count+=1;
+                    clr()
                     break;
                 #column three
                 if m[5]==m[2]and m[8]=='*'and m[5]!='*':
                     m[8]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[5]==m[8]and m[2]=='*'and m[8]!='*':
                     m[2]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[8]==m[2]and m[5]=='*'and m[8]!='*':
                     m[5]='o';
                     count+=1;
+                    clr()
                     break;
                 #row one
                 if m[0]==m[2]and m[1]=='*'and m[0]!='*':
                     m[1]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[0]==m[1]and m[2]=='*'and m[0]!='*':
                     m[2]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[1]==m[2]and m[0]=='*'and m[1]!='*':
                     m[0]='o';
                     count+=1;
+                    clr()
                     break;
                 #row two
                 if m[4]==m[3]and m[5]=='*'and m[4]!='*':
                     m[5]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[4]==m[5]and m[3]=='*'and m[4]!='*':
                     m[3]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[5]==m[3]and m[4]=='*'and m[5]!='*':
                     m[4]='o';
                     count+=1;
+                    clr()
                     break;
                 #row three
                 if m[7]==m[8]and m[6]=='*'and m[8]!='*':
                     m[6]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[7]==m[6]and m[8]=='*'and m[6]!='*':
                     m[8]='o';
                     count+=1;
+                    clr()
                     break;
                 if m[6]==m[8]and m[7]=='*'and m[8]!='*':
                     m[7]='o';
                     count+=1;
+                    clr()
                     break;
                 y=random.randint(1,9)-1;
                 if m[y]!='x' and m[y]!='o':
                     m[y]='o';
                     count+=1;
+                    clr()
                     break;
                 else:
-                    print("YOU CANNOT PLACE HERE");
+                    pass
 #checking if
 #diagonal checking
             if m[4]==m[0]and m[4]==m[8]:
@@ -339,6 +355,7 @@ def play():
                     tkinter.messagebox.showinfo('!!!!!!!!','ULOST')
                     break;
         tkinter.messagebox.showinfo('matchfinished','hitplayfornewmatch')
+        clr()
         break;
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #play button function
@@ -354,13 +371,14 @@ def play2():
 #player one's turn
 
             while 1:
-                print("PLAYER ONE");
+
 
                 printmat(*m)
                 x=int(tkinter.simpledialog.askinteger('playerone','number'))-1;
                 if m[x]!='x' and m[x]!='o':
                         m[x]='x';
                         count+=1;
+                        clr()
                         break;
                 else:
                     tkinter.messagebox.showerror('!!!!!!!!','UCANTDOTHAT!')
@@ -452,13 +470,14 @@ def play2():
 #player two's turn
 
             while 1:
-                print("PLAYER two");
+
 
                 printmat(*m)
                 x=int(tkinter.simpledialog.askinteger('playertwo','number'))-1;
                 if m[x]!='x' and m[x]!='o':
                         m[x]='x';
                         count+=1;
+                        clr()
                         break;
                 else:
                     tkinter.messagebox.showerror('!!!!!!!!','UCANTDOTHAT!')
@@ -542,6 +561,7 @@ def play2():
                     tkinter.messagebox.showinfo('!!!!!!!!','2WON')
                     break;
         tkinter.messagebox.showinfo('matchfinished','hitplayfornewmatch')
+        clr()
         break;
 
 
@@ -553,21 +573,21 @@ def play2():
 from tkinter import *
 
 master = Tk()
-master.geometry()
-t=Text(master)
-t.pack()
+master.geometry('180x180')
+frame=Frame(master,width=50,height=50)
+frame.pack(side='bottom')
+t=Text(master,width=40,height=40)
+t.pack(side='top')
 master.title("XNO BY VINAY")
-frame=Frame(master,width=1000,height=500)
-frame.pack()
+
 tkinter.messagebox.showinfo("INSTRUCTIONS",'keeping in mind that each position is respectively held by a number from 1-9\n give the respective number to place your pick\n the first row elements are 1,2,3 respectively\n')
-tlabel=Label(master,text="TIC TAC TOE")
-tlabel.pack(side="top")
+
 but1=Button(frame,text="singleplayer",fg="red",bg="yellow",command=play)
-but1.pack(side="left",fill=X,expand=YES)
+but1.pack(side="top",fill=X)
 but3=Button(frame,text="2player",fg="red",bg="yellow",command=play2)
-but3.pack(side="left",fill=X,expand=YES)
-but2=Button(master,text="quit!",fg="orange",bg="black",command=frame.quit)
-but2.pack(side="bottom",fill=X,expand=YES)
+but3.pack(side="top",fill=X)
+but2=Button(frame,text="quit!",fg="orange",bg="black",command=frame.quit)
+but2.pack(side="bottom",fill=X)
 
 
 
