@@ -1,3 +1,4 @@
+
 import random
 #matrix printer
 import tkinter.simpledialog
@@ -38,6 +39,7 @@ def printmat(*m):
 
 #play button function
 def play():
+
     while 1:
         print("new game starts")
         m=['*','*','*','*','*','*','*','*','*'];
@@ -145,8 +147,112 @@ def play():
                 break;
 #player two's turn
             while 1:
-                print("wait ...........");
 
+                tkinter.messagebox.showinfo('computer','thinking please wait......')
+#diagone
+                if m[4]==m[0]and m[8]=='*' and m[4]!='*' :
+                    m[8]='o';
+                    count+=1;
+                    break;
+                if m[4]==m[8]and m[0]=='*'and m[4]!='*':
+                    m[0]='o';
+                    count+=1;
+                    break;
+                if m[8]==m[0]and m[4]=='*' and m[0]!='*':
+                    m[4]='o';
+                    count+=1;
+                    break;
+                #diag two
+                if m[4]==m[2]and m[6]=='*'and m[4]!='*' :
+                    m[6]='o';
+                    count+=1;
+                    break;
+                if m[4]==m[6]and m[2]=='*' and m[4]!='*':
+                    m[2]='o';
+                    count+=1;
+                    break;
+                if m[6]==m[2]and m[4]=='*' and m[2]!='*':
+                    m[4]='o';
+                    count+=1;
+                    break;
+                #column one
+                if m[0]==m[3]and m[6]=='*'and m[0]!='*':
+                    m[6]='o';
+                    count+=1;
+                    break;
+                if m[0]==m[6]and m[3]=='*'and m[0]!='*':
+                    m[3]='o';
+                    count+=1;
+                    break;
+                if m[6]==m[3]and m[0]=='*'and m[3]!='*':
+                    m[0]='o';
+                    count+=1;
+                    break;
+                #column two
+                if m[4]==m[1]and m[7]=='*'and m[4]!='*':
+                    m[7]='o';
+                    count+=1;
+                    break;
+                if m[4]==m[7]and m[1]=='*'and m[4]!='*':
+                    m[1]='o';
+                    count+=1;
+                    break;
+                if m[7]==m[1]and m[4]=='*'and m[1]!='*':
+                    m[4]='o';
+                    count+=1;
+                    break;
+                #column three
+                if m[5]==m[2]and m[8]=='*'and m[5]!='*':
+                    m[8]='o';
+                    count+=1;
+                    break;
+                if m[5]==m[8]and m[2]=='*'and m[8]!='*':
+                    m[2]='o';
+                    count+=1;
+                    break;
+                if m[8]==m[2]and m[5]=='*'and m[8]!='*':
+                    m[5]='o';
+                    count+=1;
+                    break;
+                #row one
+                if m[0]==m[2]and m[1]=='*'and m[0]!='*':
+                    m[1]='o';
+                    count+=1;
+                    break;
+                if m[0]==m[1]and m[2]=='*'and m[0]!='*':
+                    m[2]='o';
+                    count+=1;
+                    break;
+                if m[1]==m[2]and m[0]=='*'and m[1]!='*':
+                    m[0]='o';
+                    count+=1;
+                    break;
+                #row two
+                if m[4]==m[3]and m[5]=='*'and m[4]!='*':
+                    m[5]='o';
+                    count+=1;
+                    break;
+                if m[4]==m[5]and m[3]=='*'and m[4]!='*':
+                    m[3]='o';
+                    count+=1;
+                    break;
+                if m[5]==m[3]and m[4]=='*'and m[5]!='*':
+                    m[4]='o';
+                    count+=1;
+                    break;
+                #row three
+                if m[7]==m[8]and m[6]=='*'and m[8]!='*':
+                    m[6]='o';
+                    count+=1;
+                    break;
+                if m[7]==m[6]and m[8]=='*'and m[6]!='*':
+                    m[8]='o';
+                    count+=1;
+                    break;
+                if m[6]==m[8]and m[7]=='*'and m[8]!='*':
+                    m[7]='o';
+                    count+=1;
+                    break;
                 y=random.randint(1,9)-1;
                 if m[y]!='x' and m[y]!='o':
                     m[y]='o';
