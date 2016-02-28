@@ -235,7 +235,215 @@ def play():
         tkinter.messagebox.showinfo('matchfinished','hitplayfornewmatch')
         break;
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#play button function
+def play2():
+    while 1:
+        print("new game starts")
+        m=['*','*','*','*','*','*','*','*','*'];
+        count=0;
 
+        while 1:
+
+
+#player one's turn
+
+            while 1:
+                print("PLAYER ONE");
+
+                printmat(*m)
+                x=int(tkinter.simpledialog.askinteger('playerone','number'))-1;
+                if m[x]!='x' and m[x]!='o':
+                        m[x]='x';
+                        count+=1;
+                        break;
+                else:
+                    tkinter.messagebox.showerror('!!!!!!!!','UCANTDOTHAT!')
+
+#checking if
+#diagonal checking
+            if m[4]==m[0]and m[4]==m[8]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[4]==m[6]and m[4]==m[2]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+#row and column checkings
+    #1,1
+            if m[0]==m[1] and m[0]==m[2]:
+                if m[0]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[0]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[0]==m[3] and m[0]==m[6]:
+                if m[0]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[0]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+    #2,2
+            if m[3]==m[4] and m[3]==m[5]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[1]==m[4] and m[1]==m[7]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+    #3,3
+            if m[6]==m[7] and m[6]==m[8]:
+                if m[8]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[8]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[2]==m[5] and m[2]==m[8]:
+                if m[8]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[8]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+#draw match scenario
+            if count==9:
+                printmat(*m);
+                tkinter.messagebox.showinfo('!!!!!!!!','ITISADRAW')
+                break;
+
+#player two's turn
+
+            while 1:
+                print("PLAYER two");
+
+                printmat(*m)
+                x=int(tkinter.simpledialog.askinteger('playertwo','number'))-1;
+                if m[x]!='x' and m[x]!='o':
+                        m[x]='x';
+                        count+=1;
+                        break;
+                else:
+                    tkinter.messagebox.showerror('!!!!!!!!','UCANTDOTHAT!')
+
+#checking if
+#diagonal checking
+            if m[4]==m[0]and m[4]==m[8]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[4]==m[6]and m[4]==m[2]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+#row and column checkings
+    #1,1
+            if m[0]==m[1] and m[0]==m[2]:
+                if m[0]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[0]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[0]==m[3] and m[0]==m[6]:
+                if m[0]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[0]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+    #2,2
+            if m[3]==m[4] and m[3]==m[5]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[1]==m[4] and m[1]==m[7]:
+                if m[4]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[4]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+    #3,3
+            if m[6]==m[7] and m[6]==m[8]:
+                if m[8]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[8]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+            if m[2]==m[5] and m[2]==m[8]:
+                if m[8]=='x':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','1WON')
+                    break;
+                if m[8]=='o':
+                    printmat(*m);
+                    tkinter.messagebox.showinfo('!!!!!!!!','2WON')
+                    break;
+        tkinter.messagebox.showinfo('matchfinished','hitplayfornewmatch')
+        break;
+
+
+
+
+
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
 from tkinter import *
 
 master = Tk()
@@ -250,6 +458,8 @@ tlabel=Label(master,text="TIC TAC TOE")
 tlabel.pack(side="top")
 but1=Button(frame,text="play",fg="red",bg="yellow",command=play)
 but1.pack(side="left",fill=X,expand=YES)
+but3=Button(frame,text="2player",fg="red",bg="yellow",command=play2)
+but3.pack(side="left",fill=X,expand=YES)
 but2=Button(master,text="quit!",fg="orange",bg="black",command=frame.quit)
 but2.pack(side="bottom",fill=X,expand=YES)
 
